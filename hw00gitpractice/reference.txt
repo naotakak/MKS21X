@@ -4,3 +4,6 @@ git pull: request changes
 git commit: commit files for upload
 git push: sync with a repo
 git status: tells you what files have been added to the commit
+
+
+blah blah
