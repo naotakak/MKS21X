@@ -1,5 +1,6 @@
-git clone
-git pull
-git commit
-git push
-git status
+git clone: clone a directory from github onto your local machine
+git add: tells github to keep track of the file
+git pull: request changes 
+git commit: commit files for upload
+git push: sync with a repo
+git status: tells you what files have been added to the commit
