@@ -3,7 +3,7 @@ public class ReferenceBook extends LibraryBook {
 
     public ReferenceBook(String author, String title, String ISBN, String callNumber, String collection) {
 	super(author, title, ISBN, callNumber);
-	collection = collection;
+	this.collection = collection;
     }
     
     public String collection() {
@@ -11,7 +11,7 @@ public class ReferenceBook extends LibraryBook {
     }
 
     public void setCollection(String collection) {
-	collection = collection;
+	this.collection = collection;
     }
 
     public void checkout(String patron, String due) {
