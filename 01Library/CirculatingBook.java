@@ -14,11 +14,11 @@ public class CirculatingBook extends LibraryBook {
 	return dueDate;
     }
 
-    private void setCurrentHolder(String newHolder) {
+    public void setCurrentHolder(String newHolder) {
 	currentHolder = newHolder;
     }
 
-    private void setDueDate(String newDate) {
+    public void setDueDate(String newDate) {
 	dueDate = newDate;
     }
 
