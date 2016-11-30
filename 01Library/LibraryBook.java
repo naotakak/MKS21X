@@ -20,10 +20,10 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
 
     public int compareTo(LibraryBook b) {
 	if (callNumber != null) {
-	    if (Integer.parseInt(callNumber()) < Integer.parseInt(b.callNumber())) {
+	    if (callNumber().compareTo(b.callNumber()) < 0) {
 		return -1;
 	    }
-	    if (Integer.parseInt(callNumber()) > Integer.parseInt(b.callNumber())) {
+	    if (callNumber().compareTo(b.callNumber()) > 0) {
 		return 1;
 	    }
 	    else {
