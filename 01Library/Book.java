@@ -7,9 +7,9 @@ public class Book {
     }
 
     public Book(String author, String title, String ISBN) {
-	author = author;
-	title = title;
-	ISBN = ISBN;
+	this.author = author;
+	this.title = title;
+	this.ISBN = ISBN;
     }
 
     public String author() {
@@ -25,15 +25,15 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-	author = author;
+	this.author = author;
     }
 
     public void setTitle(String title) {
-	title = title;
+	this.title = title;
     }
 
     public void setISBN(String ISBN) {
-	ISBN = ISBN;
+	this.ISBN = ISBN;
     }
 
     public String toString() {
