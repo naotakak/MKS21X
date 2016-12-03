@@ -161,7 +161,7 @@ public class SuperArray implements Iterable<String>{
     public Iterator<String> iterator() {
 	return new SuperArrayIterator(this);
     }
-    /*
+    
     public static void main(String[] args) {
 	SuperArray data = new SuperArray();
 	int i = 0;
@@ -169,7 +169,7 @@ public class SuperArray implements Iterable<String>{
 	    data.add(""+(char)('A'+i%26));
 	    i++;
 	}
-
+	/*
 	System.out.println(data);
 	System.out.println("Standard loop:");
 
@@ -180,6 +180,7 @@ public class SuperArray implements Iterable<String>{
 	System.out.println("for-each loop:");
 	for(String s : data){
 	    System.out.print(s+" ");
-	    }
-	    }*/
+        }
+	*/
+    }
 }
