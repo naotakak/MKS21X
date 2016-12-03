@@ -38,14 +38,17 @@ public class SuperArray implements Iterable<String>{
     }
 
     public boolean add(String n){
-	size += 1;
+	size ++;
+	while (size() > data.length) {
+	    grow();
+	}
 	data[size() - 1] = n;
 	return true;
     }
 
     private void grow(){
-	String[]temp = new String[size * 2];
-	for (int i = 0 ; i < size ; i ++) {
+	String[]temp = new String[size * 2 + 1];
+	for (int i = 0 ; i < size - 1; i ++) {
 	    temp[i] = data[i];
 	}
 	data = temp;
@@ -169,7 +172,6 @@ public class SuperArray implements Iterable<String>{
 	    data.add(""+(char)('A'+i%26));
 	    i++;
 	}
-	/*
 	System.out.println(data);
 	System.out.println("Standard loop:");
 
@@ -181,6 +183,5 @@ public class SuperArray implements Iterable<String>{
 	for(String s : data){
 	    System.out.print(s+" ");
         }
-	*/
     }
 }
