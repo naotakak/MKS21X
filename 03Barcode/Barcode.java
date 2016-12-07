@@ -25,9 +25,17 @@ public class Barcode implements Comparable<Barcode>{
 
 // postcondition: Creates a copy of a bar code.
   public Barcode clone(){
-      
+      Barcode n = new Barcode(_zip);
+      return n;
   }
 
+  public String zip() {
+      return _zip;
+  }
+
+  public int checkDigit() {
+      return _checkDigit;
+  }
 
 // postcondition: computes and returns the check sum for _zip
   private int checkSum(){
@@ -45,14 +53,53 @@ public class Barcode implements Comparable<Barcode>{
 //ex. "084518  |||:::|::|::|::|:|:|::::|||::|:|"      
   public String toString(){
       String zip1 = _zip + _checkDigit;
-      String s = zip1 + " |"
+      String s = zip1 + " |";
       for (int i = 0; i < zip1.length() ; i ++) {
 	  char e = zip1.charAt(i);
-	  String 
+	  String code;
+	  switch (e) {
+	  case 0: code = "||:::";
+	      break;
+	  case 1: code = ":::||";
+	      break;
+	  case 2: code = "::|:|";
+              break;
+          case 3: code = "::||:";
+              break;
+	  case 4: code = ":|::|";
+	      break;
+	  case 5: code = ":|:|:";
+	      break;
+	  case 6: code = ":||::";
+	      break;
+	  case 7: code = "|:::|";
+	      break;
+	  case 8: code = "|::|:";
+	      break;
+	  case 9: code = "|:|::";
+	      break;
+	  default : code = "";
+	      break;
+	  }
+	  s += code;
+      }
+      s += "|";
+      return s;
   }
 
 
 // postcondition: compares the zip + checkdigit, in numerical order. 
-  public int compareTo(Barcode other){}
-    
+  public int compareTo(Barcode other){
+      int z = Integer.parseInt(_zip + _checkDigit);
+      int o = Integer.parseInt(other.zip() + other.checkDigit());
+      if (z < o) {
+	  return -1;
+      }
+      if (z > o) {
+	  return 1;
+      }
+      else {
+	  return 0;
+      }
+  }
 }
