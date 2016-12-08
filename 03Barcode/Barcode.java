@@ -12,12 +12,12 @@ public class Barcode implements Comparable<Barcode>{
 //               _zip and _checkDigit are initialized.
   public Barcode(String zip) {
       if (zip.length() > 5) {
-	  throw new RuntimeException();
+	  throw new IllegalArgumentException();
       }
       try {
 	  Integer.parseInt(zip);
       }catch (NumberFormatException e) {
-	  throw new RuntimeException();
+	  throw new IllegalArgumentException();
       }
       _zip = zip;
       _checkDigit = checkSum(); 
