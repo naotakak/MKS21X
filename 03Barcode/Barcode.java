@@ -1,4 +1,4 @@
-Bimport java.lang.Integer;
+import java.lang.Integer;
 import java.util.ArrayList;
 
 public class Barcode extends ArrayList<String> implements Comparable<Barcode>{
