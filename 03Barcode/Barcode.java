@@ -1,4 +1,4 @@
-import java.lang.Integer;
+Bimport java.lang.Integer;
 import java.util.ArrayList;
 
 public class Barcode extends ArrayList<String> implements Comparable<Barcode>{
@@ -13,7 +13,6 @@ public class Barcode extends ArrayList<String> implements Comparable<Barcode>{
    }
 
    public Barcode(String zip) {
-       thing(codes);
        if (zip.length() != 5) {
 	   throw new IllegalArgumentException("Incorrect length");
        }
@@ -60,6 +59,7 @@ public class Barcode extends ArrayList<String> implements Comparable<Barcode>{
    }
    
    public static String toZip(String code) {
+       thing(codes);
        if (code.length() != 32) {
 	   throw new IllegalArgumentException("Invalid length");
        }
