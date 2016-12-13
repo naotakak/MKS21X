@@ -14,7 +14,7 @@ public class Sorts{
 	    int temp = data[i];
 	    int place = i;
 	    for (int e = i + 1 ; e < data.length ; e ++) {
-		if (data[e] > temp) {
+		if (data[e] < temp) {
 		    temp = data[e];
 		    place = e;
 		}
