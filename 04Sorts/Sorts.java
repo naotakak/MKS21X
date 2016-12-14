@@ -24,6 +24,19 @@ public class Sorts{
 	}
     }
     
-    
+    public static void main(String[] args) {
+	int[] a = {6,3,1,7,5,9,4,0,2};
+	SelectionSort(a);
+	System.out.println(Arrays.toString(a));
+	int[] b = {};
+	SelectionSort(b);
+	System.out.println(Arrays.toString(b));
+	int[] c = {10};
+	SelectionSort(c);
+	System.out.println(Arrays.toString(c));
+	int[] d = {400,303,1500,1759,1618,13,11,1436,2168,1172,5280,2016,38387};
+	SelectionSort(d);
+	System.out.println(Arrays.toString(d));
+    }
 }
 
