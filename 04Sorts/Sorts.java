@@ -23,20 +23,28 @@ public class Sorts{
 	    data[i] = temp;
 	}
     }
-    
+    /*
     public static void main(String[] args) {
 	int[] a = {6,3,1,7,5,9,4,0,2};
-	SelectionSort(a);
-	System.out.println(Arrays.toString(a));
+	selectionSort(a);
+	for (int i = 0; i < a.length; i ++) {
+	    System.out.print(a[i] + " , ");
+	}
 	int[] b = {};
-	SelectionSort(b);
-	System.out.println(Arrays.toString(b));
+	selectionSort(b);
+	for (int i = 0 ; i < b.length; i ++){
+	    System.out.print(b[i] + " , ");
+	}
 	int[] c = {10};
-	SelectionSort(c);
-	System.out.println(Arrays.toString(c));
+	selectionSort(c);
+	for (int i = 0; i < c.length; i++) {
+	    System.out.print(c[i] + " , ");
+	}
 	int[] d = {400,303,1500,1759,1618,13,11,1436,2168,1172,5280,2016,38387};
-	SelectionSort(d);
-	System.out.println(Arrays.toString(d));
-    }
+	selectionSort(d);
+	for (int i = 0 ; i < d.length; i ++) {
+	    System.out.print(d[i] + " , ");
+	}
+	}*/
 }
 
