@@ -41,30 +41,41 @@ public class Sorts{
     }
 
     public static void bubbleSort(int[] data) {
-	
+	for (int e = 0; e < data.length; e ++) {
+	    int place = data.length;
+	    for (int i = 0; i < place - 1; i ++) {
+		int temp;
+		if (data[i] > data[i + 1]) {
+		    temp = data[i+1];
+		    data[i + 1] = data[i];
+		    data[i] = temp;
+		}
+	    }
+	    place --;
+	}
     }
 
     public static void main(String[] args) {
 	int[] a = {6,3,1,7,5,9,4,0,2};
-	insertionSort(a);
+	bubbleSort(a);
 	for (int i = 0; i < a.length; i ++) {
 	    System.out.print(a[i] + ",");
 	}
 	System.out.println();
 	int[] b = {};
-	insertionSort(b);
+	bubbleSort(b);
 	for (int i = 0 ; i < b.length; i ++){
 	    System.out.print(b[i] + ",");
 	}
 	System.out.println();
 	int[] c = {10};
-	insertionSort(c);
+	bubbleSort(c);
 	for (int i = 0; i < c.length; i++) {
 	    System.out.print(c[i] + ",");
 	}
 	System.out.println();
 	int[] d = {400,303,1500,1759,1618,13,11,1436,2168,1172,5280,2016,38387};
-	insertionSort(d);
+	bubbleSort(d);
 	for (int i = 0 ; i < d.length; i ++) {
 	    System.out.print(d[i] + ",");
 	}
