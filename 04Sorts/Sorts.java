@@ -25,15 +25,15 @@ public class Sorts{
     }
 
     public static void insertionSort(int[] data) {
-	for (int i = 1 ; i < data.length - 1 ; i ++) {
+	for (int i = 1 ; i < data.length ; i ++) {
 	    int t = i;
-	    for (int e = i; e > 0 ; e -= 1) {
+	    for (int e = i; e > 0 ; e --) {
 		if (data[i] < data[e]) {
-		    t -= 1;
+		    t --;
 		}
 	    }
 	    int temp = data[i];
-	    for (int place = i; place > t + 1; place -= 1) {
+	    for (int place = i; place > t + 1; place --) {
 		data[place] = data[place - 1];
 	    }
 	    data[t] = temp;
