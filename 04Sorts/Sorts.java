@@ -25,15 +25,15 @@ public class Sorts{
     }
 
     public static void insertionSort(int[] data) {
-	for (int i = 1 ; i < data.length ; i ++) {
+	for (int i = 1 ; i < data.length - 1 ; i ++) {
 	    int t = i;
-	    for (int e = i; e > 0 ; e --) {
+	    for (int e = i + 1; e > 0 ; e --) {
 		if (data[i] < data[e]) {
 		    t --;
 		}
 	    }
 	    int temp = data[i];
-	    for (int place = i; place > t + 1; place --) {
+	    for (int place = i; place > t; place --) {
 		data[place] = data[place - 1];
 	    }
 	    data[t] = temp;
@@ -57,25 +57,25 @@ public class Sorts{
 
     public static void main(String[] args) {
 	int[] a = {6,3,1,7,5,9,4,0,2};
-	bubbleSort(a);
+	insertionSort(a);
 	for (int i = 0; i < a.length; i ++) {
 	    System.out.print(a[i] + ",");
 	}
 	System.out.println();
 	int[] b = {};
-	bubbleSort(b);
+	insertionSort(b);
 	for (int i = 0 ; i < b.length; i ++){
 	    System.out.print(b[i] + ",");
 	}
 	System.out.println();
 	int[] c = {10};
-	bubbleSort(c);
+	insertionSort(c);
 	for (int i = 0; i < c.length; i++) {
 	    System.out.print(c[i] + ",");
 	}
 	System.out.println();
 	int[] d = {400,303,1500,1759,1618,13,11,1436,2168,1172,5280,2016,38387};
-	bubbleSort(d);
+	insertionSort(d);
 	for (int i = 0 ; i < d.length; i ++) {
 	    System.out.print(d[i] + ",");
 	}
