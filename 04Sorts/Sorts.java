@@ -26,14 +26,14 @@ public class Sorts{
 
     public static void insertionSort(int[] data) {
 	for (int i = 1 ; i < data.length - 1 ; i ++) {
-	    int t = i + 1;
-	    int temp = data[i + 1];
-	    for (int e = i + 1 ; e > i ; e -= 1) {
-		if (data[i + 1] < data[e]) {
+	    int t = i;
+	    for (int e = i; e > 0 ; e -= 1) {
+		if (data[i] < data[e]) {
 		    t -= 1;
 		}
 	    }
-	    for (int place = i + 1; place > t; place -= 1) {
+	    int temp = data[i];
+	    for (int place = i; place > t + 1; place -= 1) {
 		data[place] = data[place - 1];
 	    }
 	    data[t] = temp;
