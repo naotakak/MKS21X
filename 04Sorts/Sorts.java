@@ -40,7 +40,10 @@ public class Sorts{
 	}
     }
 
-    
+    public static void bubbleSort(int[] data) {
+	
+    }
+
     public static void main(String[] args) {
 	int[] a = {6,3,1,7,5,9,4,0,2};
 	insertionSort(a);
