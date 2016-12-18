@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Sorts{
     /**EDIT THIS METHOD TO MATCH YOUR NAME 
      */
@@ -25,16 +27,12 @@ public class Sorts{
     }
 
     public static void insertionSort(int[] data) {
-	for (int i = 1 ; i < data.length - 1 ; i ++) {
-	    int t = i;
-	    for (int e = i + 1; e > 0 ; e --) {
-		if (data[i] < data[e]) {
-		    t --;
-		}
-	    }
+	for (int i = 1 ; i < data.length ; i ++) {
 	    int temp = data[i];
-	    for (int place = i; place > t; place --) {
-		data[place] = data[place - 1];
+	    int t = i;
+	    while (t > 0 && temp < data[t-1]) {
+		data[t] = data[t - 1]; 
+		t --;
 	    }
 	    data[t] = temp;
 	}
@@ -55,31 +53,48 @@ public class Sorts{
 	}
     }
 
-    public static void main(String[] args) {
-	int[] a = {6,3,1,7,5,9,4,0,2};
-	insertionSort(a);
-	for (int i = 0; i < a.length; i ++) {
-	    System.out.print(a[i] + ",");
+    public static int[] randomArray(int size, int max){
+	int[] data= new int[size];
+	Random num = new Random();
+	for(int i=0; i<data.length; i++){
+	    data[i]=num.nextInt(max);
 	}
-	System.out.println();
-	int[] b = {};
-	insertionSort(b);
-	for (int i = 0 ; i < b.length; i ++){
-	    System.out.print(b[i] + ",");
-	}
-	System.out.println();
-	int[] c = {10};
-	insertionSort(c);
-	for (int i = 0; i < c.length; i++) {
-	    System.out.print(c[i] + ",");
-	}
-	System.out.println();
-	int[] d = {400,303,1500,1759,1618,13,11,1436,2168,1172,5280,2016,38387};
-	insertionSort(d);
-	for (int i = 0 ; i < d.length; i ++) {
-	    System.out.print(d[i] + ",");
-	}
-	System.out.println();
+	return data;
+    }
+    
+    public static String Test(String method, int[]initial){
+	    String sorted;
+	    long startTime = System.currentTimeMillis();
+	    int[] copy = new int[initial.length];
+	    System.arraycopy( initial, 0, copy, 0, initial.length );
+	    Arrays.sort(copy);
+	    Object[] Sorted = {copy};
+	    int[] ary = new int[initial.length];
+	    System.arraycopy( initial, 0, ary, 0, initial.length );
+	    switch(method){
+	    case "selectionSort":Sorts.selectionSort(ary);
+		break;
+	    case "insertionSort":Sorts.insertionSort(ary);
+		break;
+	    case "bubbleSort":Sorts.bubbleSort(ary);
+		break;
+	    default: return "INVALID. CURENTLY THERE ARE ONLY:\nselectionSort, insertionSort, bubbleSort \nPlease try again.";
+	    }
+	    Object[] Applied = {ary};
+	    if (Arrays.deepEquals(Sorted, Applied)){
+		sorted="Did sort";
+	    }
+	    else{
+		sorted="Did not sort";
+	    }
+	    long endTime = System.currentTimeMillis();
+	    long time=endTime-startTime;
+	    return String.format("%s: %s and took time of %s ms", method, sorted, time);
+    }
+    
+    public static void main(String[] a){
+	System.out.println(Test(a[0],randomArray(10000,1000)));
+	
     }
 }
 
