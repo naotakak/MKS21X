@@ -61,7 +61,7 @@ public class Sorts{
 	}
 	return data;
     }
-    
+    /*
     public static String Test(String method, int[]initial){
 	    String sorted;
 	    long startTime = System.currentTimeMillis();
@@ -95,6 +95,6 @@ public class Sorts{
     public static void main(String[] a){
 	System.out.println(Test(a[0],randomArray(10000,1000)));
 	
-    }
+	}*/
 }
 
